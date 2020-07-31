@@ -196,6 +196,10 @@ namespace SberTestingEtalon
                 // Удаляем папку
                 Directory.Delete(tempDirForRar);
             }
+            // Закрываем ещё раз, потому что может быть не архив
+            logtraceFile.Close();
+
+            MessageBox.Show("Converting is end", "Done");
         }
 
         /**
