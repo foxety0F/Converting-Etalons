@@ -266,6 +266,11 @@ namespace SberTestingEtalon
                                 }
 
                                 // добавляем значение в csv с реплейсом #
+
+                                if (valCell.IndexOf(";") > 0) {
+                                    valCell = (textBox4.Text == "" ? "\"" : textBox4.Text) + valCell + (textBox4.Text == "" ? "\"" : textBox4.Text);
+                                }
+
                                 csv += valCell.Replace("#", "_");
 
                             }
