@@ -94,6 +94,12 @@ namespace SberTestingEtalon
 
             String now = DateTime.Now.ToString("yyyyMMdd_hhmmss");
             createRar = checkBox1.Checked;
+            progressBar1.Value = 0;
+
+            if (!isFile && !isFolder) {
+                MessageBox.Show("Вы не выбрали ни папку, ни файл.");
+                return;
+            }
 
             //Чекбокс на создание RAR-файла
             if (createRar)
@@ -199,6 +205,8 @@ namespace SberTestingEtalon
             // Закрываем ещё раз, потому что может быть не архив
             logtraceFile.Close();
 
+
+            progressBar1.Value = 100;
             MessageBox.Show("Converting is end", "Done");
         }
 
@@ -383,12 +391,11 @@ namespace SberTestingEtalon
         public void writeToLogtrace(string val) {
 
                 // Превращаем в байты
-                byte[] byteArray = new UTF8Encoding(true).GetBytes(val + "\n");
+            byte[] byteArray = new UTF8Encoding(true).GetBytes(val + "\n");
 
-                // Пишем в файл
-                logtraceFile.Write(byteArray, 0, byteArray.Length);
-            
-            
+            // Пишем в файл
+            logtraceFile.Write(byteArray, 0, byteArray.Length);
+            label3.Text = val;
         }
 
         private void Form1_Load(object sender, EventArgs e)
