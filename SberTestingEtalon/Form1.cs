@@ -271,6 +271,7 @@ namespace SberTestingEtalon
                                     if (valCell.IndexOf(".") > 0) {
                                         valCell = valCell.Substring(valCell.IndexOf(".") + 1);
                                     }
+
                                 }
 
                                 // добавляем значение в csv с реплейсом #
@@ -279,7 +280,9 @@ namespace SberTestingEtalon
                                     valCell = (textBox4.Text == "" ? "\"" : textBox4.Text) + valCell + (textBox4.Text == "" ? "\"" : textBox4.Text);
                                 }
 
-                                csv += valCell.Replace("#", "_");
+                                csv += i == 0 ? valCell.Replace("#", "_") : valCell;
+
+                                
 
                             }
                             // никогда не повредит
