@@ -93,6 +93,10 @@ namespace SberTestingEtalon
         private void button3_Click(object sender, EventArgs e)
         {
 
+            if(isFile){
+                checkBox1.Checked = false;
+            }
+            
             String now = DateTime.Now.ToString("yyyyMMdd_hhmmss");
             createRar = checkBox1.Checked;
             progressBar1.Value = 0;
@@ -102,9 +106,7 @@ namespace SberTestingEtalon
                 return;
             }
             
-            if(isFile){
-                checkBox1.Checked = false;
-            }
+            
 
             //Чекбокс на создание RAR-файла
             if (createRar)
