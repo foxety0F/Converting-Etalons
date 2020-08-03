@@ -86,6 +86,7 @@ namespace SberTestingEtalon
                     //Кнопка очистки пути, что бы можно было выбрать папку
                     button5.Visible = true;
                 }
+                checkBox1.Checked = false;
             }
         }
 
@@ -99,6 +100,10 @@ namespace SberTestingEtalon
             if (!isFile && !isFolder) {
                 MessageBox.Show("Вы не выбрали ни папку, ни файл.");
                 return;
+            }
+            
+            if(isFile){
+                checkBox1.Checked = false;
             }
 
             //Чекбокс на создание RAR-файла
