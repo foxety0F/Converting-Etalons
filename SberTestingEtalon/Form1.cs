@@ -13,7 +13,7 @@ using System.Threading;
  * @author foxety0f
  * @description Морда номер 1 для отображения конвертера
  * logtraceFilePath - путь трейса
- * logtraceFile - файл трейса
+ * logtraceFile - файл трейса 
  *
  */
 
